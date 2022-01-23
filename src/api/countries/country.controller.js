@@ -3,7 +3,7 @@ const { setError } = require('../../utils/error/controller');
 
 const getAllCountries = async (req, res, next) => {
     try {
-        const allCountries = await Country.find().populate('actors');
+        const allCountries = await Country.find().populate('streamers');
         res.status(200).json(allCountries)
     } catch (error) {
         return next(error)
